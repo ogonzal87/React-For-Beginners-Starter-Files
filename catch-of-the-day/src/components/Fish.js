@@ -6,6 +6,7 @@ class Fish extends React.Component {
     const { image, name, price, desc, status } = this.props.details
     const { addToOrder } = this.props
     const isAvailable = status === 'available'
+
     return (
       <li className="menu-fish">
         <img src={image} alt="" />

@@ -34,23 +34,25 @@ class App extends React.Component {
   }
 
   render() {
+    const { fishes, order } = this.state
+
     return (
-      <div className="catch-of-the-day">
+      <div className="catch-of-the-day" >
         <div className="menu">
           <Header tagline="Oscar's Store" />
           <ul className="fishes">
-            {Object.keys(this.state.fishes).map(key => (
+            {Object.keys(fishes).map(key => (
               <Fish
                 key={key}
-                details={this.state.fishes[key]}
+                details={fishes[key]}
                 addToOrder={() => this.addToOrder(key)}
               />
             ))}
           </ul>
         </div>
-        <Order fishes={this.state.fishes} orders={this.state.order} />
+        <Order fishes={fishes} orders={order} />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
-      </div>
+      </div >
     )
   }
 }
